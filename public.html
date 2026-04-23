@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>My Portfolio 🚀</h2>
+
+    {% for p in portfolios %}
+        <div class="card">
+            <h3>{{ p['title'] }}</h3>
+            <p>{{ p['description'] }}</p>
+            <p><b>Skills:</b> {{ p['skills'] }}</p>
+
+            <a href="{{ p['github'] }}" target="_blank">GitHub</a>
+            <a href="{{ p['demo'] }}" target="_blank">Live Demo</a>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

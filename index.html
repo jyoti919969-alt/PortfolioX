@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Builder</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            transition: 0.3s;
+        }
+
+        /* HEADER */
+        .header {
+            position: relative;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        /* DARK MODE BUTTON */
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 6px;
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* CONTAINER */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        /* GLASS CARD */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 600px;
+        }
+
+        /* TEXT */
+        .tagline {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .desc {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* BUTTONS */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .signup {
+            background-color: #4CAF50;
+        }
+
+        .login {
+            background-color: #2193b0;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* DARK MODE */
+        .dark-mode {
+            background: #121212;
+            color: white;
+        }
+
+        .dark-mode .header {
+            background: linear-gradient(135deg, #232526, #414345);
+        }
+
+        .dark-mode .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode .tagline,
+        .dark-mode .desc {
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Welcome to Portfolio Builder 🚀</h1>
+        <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <div class="glass-card">
+
+            <h2 class="tagline">Build Your Professional Portfolio in Minutes 🚀</h2>
+
+            <p class="desc">
+                Create, customize, and showcase your projects with a modern portfolio builder.
+                No coding needed. Just simple and powerful.
+            </p>
+
+            <div class="btn-group">
+                <a href="/signup"><button class="btn signup">Get Started</button></a>
+                <a href="/login"><button class="btn login">Login</button></a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            let btn = document.querySelector(".toggle-btn");
+
+            if (document.body.classList.contains("dark-mode")) {
+                btn.innerText = "☀️ Light Mode";
+            } else {
+                btn.innerText = "🌙 Dark Mode";
+            }
+        }
+    </script>
+
+<script>
+window.onload = function() {
+    document.querySelector(".glass-card").classList.add("show");
+}
+</script>
+
+</body>
+</html>
